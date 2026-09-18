@@ -64,18 +64,21 @@ cd SmartRail
 ## 11. Compilation
 From the project root:
 
-**Linux / macOS / PowerShell (Windows):**
+**Windows (PowerShell) - Verified Environment:**
+```powershell
+javac -d out (Get-ChildItem -Path src, tests -Filter "*.java" -Recurse).FullName
+```
+
+**Linux / macOS:**
 ```bash
 javac -d out $(find src -name "*.java")
 ```
-Alternatively on Windows Command Prompt:
-```cmd
-dir /s /b src\*.java > sources.txt
-javac -d out @sources.txt
-```
 
 ## 12. Running the Project
-```bash
+From the project root:
+
+**Windows (PowerShell) / Linux / macOS:**
+```powershell
 java -cp out com.smartrail.Main
 ```
 
@@ -88,8 +91,9 @@ java -cp out com.smartrail.Main
 
 ## 14. Testing
 Run the automated test suite without a framework:
-```bash
-javac -d out $(find src tests -name "*.java")
+
+**Windows (PowerShell) / Linux / macOS:**
+```powershell
 java -cp out SmartRailTest
 ```
 
